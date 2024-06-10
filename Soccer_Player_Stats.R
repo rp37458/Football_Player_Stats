@@ -1,6 +1,11 @@
 library(rvest)
 library(ggplot2)
 
+"""
+We use install rvest in order to read in the data gathered from the dataset and use ggplot2 to
+analyze the data by creating models and graphs to showcase the data. 
+
+"""
 
 # Web Scrapping Total Data San Diego Wave Team
 Wave_Stats <- "https://fbref.com/en/squads/bf961da0/San-Diego-Wave-Stats"
@@ -43,6 +48,15 @@ Team3_Minutes <- html_text(html_elements(NWSL3, "tbody .right:nth-child(7)"))
 Team3_Minutes
 Team3_Goals <- html_text(html_elements(NWSL3, "tbody .group_start:nth-child(9)"))
 Team3_Goals
+
+
+"""
+Create 3 Data Frames for each of the different teams and combine them 
+as a numeric data type in order to be used in modeling. 
+
+"""
+
+
 
 # Creating 3 Data Frames removing empty cells
 team1_data <- data.frame(
